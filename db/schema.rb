@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213222059) do
+ActiveRecord::Schema.define(version: 20160214173218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "players", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "name"
     t.integer  "games"
     t.integer  "goals"
-    t.integer  "assists"
     t.integer  "points"
+    t.integer  "assists"
     t.integer  "plus"
     t.integer  "minus"
     t.integer  "vom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

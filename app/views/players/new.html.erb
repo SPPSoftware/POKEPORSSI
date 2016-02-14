@@ -1,0 +1,38 @@
+<h1> Luo pelaaja </h1>
+<%= form_for :player, url: players_path do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'Nimi' %>
+    <%= f.text_field(:name, class: "form-control") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :games, 'Pelit' %>
+    <%= f.text_field(:games, class: "form-control", :value => '0')%>
+  </div>
+  <div class="form-group">
+    <%= f.label :goals, 'Maalit' %>
+    <%= f.text_field(:goals, class: "form-control", :value => '0')%>
+  </div>
+  <div class="form-group">
+    <%= f.label :points, 'Pisteet' %>
+    <%= f.text_field(:points, class: "form-control", :value => '0')%>
+  </div>
+  <div class="form-group">
+    <%= f.label :assists, 'Syötöt' %>
+    <%= f.text_field(:assists, class: "form-control", :value => '0')%>
+  </div>
+  <div class="form-group">
+    <%= f.label :plus, '+' %>
+    <%= f.text_field(:plus, class: "form-control", :value => '0')%>
+  </div>
+  <div class="form-group">
+    <%= f.label :minus, '-' %>
+    <%= f.text_field(:minus, class: "form-control", :value => '0')%>
+  </div>
+  <div class="form-group">
+    <%= f.label :vom, 'VOM' %>
+    <%= f.text_field(:vom, class: "form-control", :value => '0')%>
+  </div>
+  <%= f.submit "Lisää pelaaja", class: "btn btn-primary" %>
+  <%= link_to "Takaisin", root_path %>
+
+<% end %>

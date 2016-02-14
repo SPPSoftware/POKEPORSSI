@@ -1,0 +1,39 @@
+<h1> Muokkaa pelaajaa </h1>
+<%= form_for(@player) do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'Nimi' %>
+    <%= f.text_field(:name, class: "form-control") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :games, 'Pelit' %>
+    <%= f.text_field(:games, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :goals, 'Maalit' %>
+    <%= f.text_field(:goals, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :points, 'Pisteet' %>
+    <%= f.text_field(:points, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :assists, 'Syötöt' %>
+    <%= f.text_field(:assists, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :plus, '+' %>
+    <%= f.text_field(:plus, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :minus, '-' %>
+    <%= f.text_field(:minus, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :vom, 'VOM' %>
+    <%= f.text_field(:vom, class: "form-control")%>
+  </div>
+  <%= f.submit "Muokkaa", class: "btn btn-primary" %>
+  <%= link_to "Poista", player_path(@player), method: :delete, class: "btn btn-danger" %>
+  <%= link_to 'Takaisin', root_path %>
+
+<% end %>
