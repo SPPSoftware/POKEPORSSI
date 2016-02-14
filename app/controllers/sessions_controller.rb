@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
         redirect_to '/'
       else
         render action: 'new', alert: "Väärät tunnukset"
-
       end
   end
 

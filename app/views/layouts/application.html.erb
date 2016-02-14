@@ -13,7 +13,13 @@
     </div>
 <% if current_user %>
 <ul class="navbar-form navbar-left">
-  <button class="btn btn-primary navbar-btn"><%= link_to "Uusi pelaaja", new_player_path %></button>
+  <button class="btn btn-primary navbar-btn">
+    <%= link_to "Uusi pelaaja", new_player_path %>
+  </button>
+  <button class="btn btn-primary navbar-btn">
+    <%= link_to "Uusi maalivahti", new_goaly_path %>
+  </button>
+
 </ul>
   <ul class="navbar-form navbar-right">
     <button class="btn btn-default navbar-btn"> <%= link_to "Kirjaudu ulos", logout_path, method: "delete" %></button>

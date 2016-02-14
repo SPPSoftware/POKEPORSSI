@@ -1,11 +1,11 @@
 class PlayersController < ApplicationController
+  before_action :require_user, only: [:edit, :update, :destroy, :new, :create]
 
   def index
     @players = Player.all
   end
 
   def show
-    @player = Player.find(params[:id])
   end
 
   def edit
@@ -44,6 +44,6 @@ class PlayersController < ApplicationController
 
   private
     def player_params
-      params.require.permit(:name, :games, :goals, :points, :assists, :plus, :minus, :vom)
+      params.require(:player).permit(:name, :games, :goals, :points, :assists, :plus, :minus, :vom)
     end
 end

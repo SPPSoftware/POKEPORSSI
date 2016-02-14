@@ -1,22 +1,15 @@
 Rails.application.routes.draw do
 
-  root 'players#index'
+  root 'pages#index'
 
+  # LOGIN
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
   resources :players
+  resources :goalies
 
-  get '/players' => 'players#index'
-  get '/players/:id' => 'players#show'
-  post '/players' => 'players#create'
-  get '/players/new' => 'players#new'
-
-  get '/players/:id/edit' => 'players#edit'
-  patch '/players/:id' => 'players#update'
-
-  delete 'players' => 'players#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
