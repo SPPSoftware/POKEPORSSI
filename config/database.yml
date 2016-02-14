@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: pokedb
+  pool: 5
+  username: user
+  password: admin
+
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
+  database: pokedb
+  pool: 5
+  username: user
+  password: admin
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: pokedb
+  pool: 5
+  username: user
+  password: admin

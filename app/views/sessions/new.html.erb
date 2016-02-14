@@ -1,0 +1,13 @@
+<h1> Login </h1>
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="form-group">
+  <%= f.label :username, 'Käyttäjätunnus' %>
+  <%= f.text_field(:username, class: "form-control") %>
+  </div>
+  <div class="form-group">
+  <%= f.label :password, 'Salasana' %>
+  <%= f.password_field(:password, class: "form-control")%>
+  </div>
+  <%= f.submit "Kirjaudu sisään", class: "btn-submit" %>
+
+<% end %>
