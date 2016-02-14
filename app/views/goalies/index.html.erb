@@ -1,0 +1,30 @@
+
+<h1 style="text-align: center"> Maalivahdit </h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nimi</th>
+      <th>Pelit</th>
+      <th>Torjunnat</th>
+      <th>Syötöt</th>
+      <th>Voitot</th>
+      <th>Tasapelit</th>
+      <th>Häviöt</th>
+    </tr>
+  </thead>
+  <% @goalies.each do |g| %>
+  <tr>
+    <th><%= g.name %></th>
+    <th><%= g.games %></th>
+    <th><%= g.saves %></th>
+    <th><%= g.assists %></th>
+    <th><%= g.wins %></th>
+    <th><%= g.ties %></th>
+    <th><%= g.losses %></th>
+    <% if current_user %>
+    <th><%= link_to "Muokkaa", edit_goaly_path(g) %></th>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+

@@ -1,0 +1,60 @@
+<h1 style="text-align: center"> ALL TIME PISTEPÖRSSI </h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nimi</th>
+      <th>Pelit</th>
+      <th>Maalit</th>
+      <th>Pisteet</th>
+      <th>Syötöt</th>
+      <th>+</th>
+      <th>-</th>
+      <th>VOM</th>
+    </tr>
+  </thead>
+  <% @players.order("points desc").each do |p| %>
+  <tr>
+    <th><%= p.name %></th>
+    <th><%= p.games %></th>
+    <th><%= p.goals %></th>
+    <th><%= p.points %></th>
+    <th><%= p.assists %></th>
+    <th><%= p.plus %></th>
+    <th><%= p.minus %></th>
+    <th><%= p.vom %></th>
+    <% if current_user %>
+    <th><%= link_to "Muokkaa", edit_player_path(p) %></th>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<h1 style="text-align: center"> Goalies </h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nimi</th>
+      <th>Pelit</th>
+      <th>Torjunnat</th>
+      <th>Syötöt</th>
+      <th>Voitot</th>
+      <th>Tasurit</th>
+      <th>Häviöt</th>
+    </tr>
+  </thead>
+  <% @goalies.each do |g| %>
+  <tr>
+    <th><%= g.name %></th>
+    <th><%= g.games %></th>
+    <th><%= g.saves %></th>
+    <th><%= g.assists %></th>
+    <th><%= g.wins %></th>
+    <th><%= g.ties %></th>
+    <th><%= g.losses %></th>
+    <% if current_user %>
+    <th><%= link_to "Muokkaa", edit_goaly_path(g) %></th>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+

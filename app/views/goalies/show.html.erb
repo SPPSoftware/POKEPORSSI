@@ -1,0 +1,26 @@
+<h1 style="text-align: center"> Maalivahti </h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nimi</th>
+      <th>Pelit</th>
+      <th>Torjunnat</th>
+      <th>Syötöt</th>
+      <th>Voitot</th>
+      <th>Tasurit</th>
+      <th>Häviöt</th>
+    </tr>
+  </thead>
+  <% p = @goalie %>
+  <tr>
+    <th><%= p.name %></th>
+    <th><%= p.games %></th>
+    <th><%= p.saves %></th>
+    <th><%= p.assists %></th>
+    <th><%= p.wins %></th>
+    <th><%= p.ties %></th>
+    <th><%= p.losses %></th>
+    <th><%= link_to "Muokkaa", edit_goaly_path(@goalie) %></th>
+  </tr>
+</table>
+

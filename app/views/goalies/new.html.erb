@@ -1,0 +1,34 @@
+<h1> Muokkaa maalivahtia </h1>
+<%= form_for(:goalie, url: goalies_path) do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'Nimi' %>
+    <%= f.text_field(:name, class: "form-control") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :games, 'Pelit' %>
+    <%= f.text_field(:games, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :saves, 'Torjunnat' %>
+    <%= f.text_field(:saves, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :assists, 'Syötöt' %>
+    <%= f.text_field(:assists, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :wins, 'Voitot' %>
+    <%= f.text_field(:wins, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :ties, 'Tasurit' %>
+    <%= f.text_field(:ties, class: "form-control")%>
+  </div>
+  <div class="form-group">
+    <%= f.label :losses, 'Häviöt' %>
+    <%= f.text_field(:losses, class: "form-control")%>
+  </div>
+  <%= f.submit "Luo maalivahti", class: "btn btn-primary" %>
+  <%= link_to 'Takaisin', root_path %>
+
+<% end %>
