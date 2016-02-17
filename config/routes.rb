@@ -2,11 +2,20 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
+  #get '/games/:game_number' => 'games#show', as: :show_game
+  #put 'games/:game_number' => 'games#update'
+  #delete 'games/:game_number' => 'games#destroy'
+
+
   # LOGIN
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  # RESOURCES
+  resources :gplayers
+  resources :goals
+  resources :games #, :except => :show
   resources :players
   resources :goalies
 
